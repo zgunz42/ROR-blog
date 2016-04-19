@@ -1,14 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= yield :title  %></title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<!-- Wrapper -->
+<div id="wrapper">
 
+  <!-- Header -->
+  <header id="header">
+    <h1><a href="<%= root_path %>">ZGUNZ<span>DEV</span></a></h1>
+    <nav class="links">
+      <ul>
+        <% @pages.each do |page| %>
+        <li><a href="#"><%=page%></a></li>
+        <% end %>
+      </ul>
+    </nav>
+    <nav class="main">
+      <ul>
+        <li class="search">
+          <a class="fa-search" href="#search">Search</a>
+          <form id="search" method="get" action="#">
+            <input type="text" name="query" placeholder="Search" />
+          </form>
+        </li>
+        <li class="menu">
+          <a class="fa-bars" href="#menu">Menu</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Menu -->
+  <section id="menu">
+
+    <!-- Search -->
+    <section>
+      <form class="search" method="get" action="#">
+        <input type="text" name="query" placeholder="Search" />
+      </form>
+    </section>
+
+    <!-- Links -->
+    <section>
+      <ul class="links">
+        <li>
+          <a href="#main">
+            <h3>BLOG</h3>
+            <p>Feugiat tempus veroeros dolor</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3>PROJECT</h3>
+            <p>Sed vitae justo condimentum</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3>LIBRARY</h3>
+            <p>Phasellus sed ultricies mi congue</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Actions -->
+    <section>
+      <ul class="actions vertical">
+        <li><a href="#" class="button big fit">Log In</a></li>
+      </ul>
+    </section>
+
+  </section>
+  <%= yield :sidebar_right %>
+  <!-- Main -->
+  <div id="main">
+    <%= yield %>
+    <!-- Pagination -->
+    <ul class="actions pagination">
+      <li><a href="" class="disabled button big previous">Previous Page</a></li>
+      <li><a href="#" class="button big next">Next Page</a></li>
+    </ul>
+  </div>
+  <%= yield :sidebar_left %>
+  <!-- Footer -->
+  <div id="footer">
+    <ul class="icons">
+      <li><a href="#" class="fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+      <li><a href="#" class="fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+      <li><a href="#" class="fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+      <li><a href="#" class="fa-rss" target="_blank"><span class="label">RSS</span></a></li>
+      <li><a href="#" class="fa-envelope" target="_blank"><span class="label">Email</span></a></li>
+    </ul>
+    <p class="copyright">&copy; ZgunzDEV. Crafted: <a href="http://designscrazed.org/">HTML5</a> &lmoustache; <a href="http://designscrazed.org/">Me</a>.</p>
+  </div>
+</div>
+<!-- Scripts -->
+<%= javascript_include_tag 'application' %>
 </body>
 </html>

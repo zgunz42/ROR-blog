@@ -1,0 +1,33 @@
+<!-- Post -->
+<% show = false if :show.nil? %>
+<article class="post">
+  <header>
+    <div class="title">
+      <h2><%= link_to post.title, post %></h2>
+      <!--<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>-->
+    </div>
+    <div class="meta">
+      <time class="published" datetime="2015-10-25"><%= post.created_at.strftime("%B %d, %Y") %></time>
+      <a href="#" class="author"><span class="name">Adi Gunawan</span><%= image_tag '1.png' %></a>
+    </div>
+  </header>
+  <a href="#" class="image featured"><%= image_tag '5.png' %></a>
+  <% if show %>
+      <p><%= simple_format post.content%></p>
+  <%else%>
+      <p><%= part post.content%></p>
+  <% end %>
+  <footer>
+    <% unless show %>
+    <ul class="actions">
+      <li><a href="<%= post_path post %>" class="button big">Continue Reading</a></li>
+    </ul>
+    <% end %>
+    <ul class="stats">
+      <li><a href="#" class="tag">General</a></li>
+      <li><a href="#" class="icon fa-heart">28</a></li>
+      <li><a href="#" class="icon fa-comment">128</a></li>
+      <li><a href="#" class="icon fa-share">128K</a></li>
+    </ul>
+  </footer>
+</article>

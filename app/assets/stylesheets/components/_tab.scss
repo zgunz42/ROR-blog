@@ -1,0 +1,56 @@
+///
+/// Future Imperfect by HTML5 UP
+/// html5up.net | @n33co
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+/// this section support for tabing in sidebar!
+///
+
+/* Tab */
+  .tab{
+    border: 1px solid _palette(border);
+    background-color: _palette(bg);
+    padding: _size(section-spacing-small);
+    position: relative;
+
+    ul {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      list-style: none;
+      margin: 0;
+      height: 2em;
+      overflow: hidden;
+      padding-left: 0;
+      padding-top: _size(section-spacing-small);
+      padding-bottom: 2em;
+
+      li {
+        float: left;
+        text-align: center;
+        display: inline-block;
+        padding: 0;
+        width: 33.3333%;
+        &.active{
+          border-bottom-width: 3px;
+          border-spacing: 3px;
+          > hr{
+            margin: 1px 20% 0;
+            padding: 2px 0;
+            background: _palette(accent);;
+          }
+        }
+      }
+    }
+    > .content{
+      margin-top: 1.5em;
+      padding: 1em 0.5em 0.5em;
+      height: 50em;
+      > *{
+        display: none;
+      }
+      > :first-child{
+        display: inherit;
+      }
+    }
+  }

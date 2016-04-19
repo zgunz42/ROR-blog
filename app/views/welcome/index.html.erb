@@ -1,0 +1,7 @@
+<% content_for :title do %>
+    ZgunzDEV | Home
+<% end %>
+<%= render @posts %>
+<% content_for :sidebar_left do %>
+  <%=render 'layouts/sidebar', locals: {direction: :left} %>
+<%end%>

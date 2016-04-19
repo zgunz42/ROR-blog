@@ -1,8 +1,7 @@
-<article>
-<%= @post.title %>
-  <div>
-    <%= @post.content %>
-  </div>
-  <%= link_to 'Edit', edit_post_path(@post) %>
-  <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: "are you crazy?"} %>
-</article>
+<% content_for :title do %>
+  ZgunzDEV | <%= @post.title %>
+<% end %>
+<%= render @post, show: true %>
+<% content_for :sidebar_right do %>
+    <%=render 'layouts/sidebar', locals: {direction: :right} %>
+<%end%>
