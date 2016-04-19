@@ -13,7 +13,7 @@
   </header>
   <a href="#" class="image featured"><%= image_tag '5.png' %></a>
   <% if show %>
-      <p><%= simple_format post.content%></p>
+      <p><%= markdown post.content %></p>
   <%else%>
       <p><%= part post.content%></p>
   <% end %>
