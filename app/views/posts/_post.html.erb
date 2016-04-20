@@ -30,4 +30,7 @@
       <li><a href="#" class="icon fa-share">128K</a></li>
     </ul>
   </footer>
+  <% if show %>
+    <%=render 'layouts/disqus', post: post %>
+  <%end%>
 </article>

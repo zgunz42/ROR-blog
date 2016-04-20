@@ -4,8 +4,6 @@ ruby '2.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Font Awesome SASS into a Rails or Compass project
 gem 'font-awesome-sass'
 # Use SCSS for stylesheets
@@ -46,6 +44,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 group :production do
