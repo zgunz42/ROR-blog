@@ -1,4 +1,6 @@
 <%= render @posts%>
+<!-- Pagination -->
+<%= will_paginate @posts %>
 <% content_for :sidebar_right do %>
     <%=render 'layouts/sidebar', locals: {direction: :right} %>
 <%end%>
