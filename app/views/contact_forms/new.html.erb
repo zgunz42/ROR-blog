@@ -1,14 +1,17 @@
+<% content_for :title do %>
+    ZgunzDEV | Contact
+<% end %>
+<section class="contact_form">
+  <div class="header">
+  <h2>Contact Form</h2>
+  <p>please fill all field with valid data</p>
+  </div>
 <%= form_for @contact do |f| %>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name, required: true %>
+    <%= f.text_field :name, placeholder: "your name",  required: true%>
     <br/>
+    <%= f.email_field :email, placeholder: "your email", required: true %>
     <br/>
-    <%= f.label :email %><br/>
-    <%= f.email_field :email, required: true %>
-    <br/>
-    <br/>
-    <%= f.label :message%><br/>
-    <%= f.text_area :message, as: :text %>
+    <%= f.text_area :message, placeholder: "what you want me to know", as: :text %>
     <br/>
     <br/>
     <div style="display: none">
@@ -17,3 +20,4 @@
     </div>
     <%= f.submit "send me" %>
 <% end %>
+</section>

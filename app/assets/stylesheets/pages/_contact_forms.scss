@@ -1,0 +1,42 @@
+// Place all the styles related to the contact_forms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.contact_form{
+  margin: 5% 30%;
+  background: _palette(bg);
+  div.header{
+    margin-bottom: 2em;
+    >*{
+      margin: 0;
+    }
+    h2{
+      text-align: center;
+      margin: 0;
+      padding-top: 2em;
+      padding-bottom: 1em;
+      background: #ccc;
+    }
+    p{
+      text-align: center;
+      font-size: 14px;
+      padding: 0;
+      font-style: italic;
+      background: none;
+    }
+  }
+  form{
+    padding: 1em;
+
+    textarea,
+    input[type="submit"]{
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+  @include breakpoint(xsmall) {
+    margin: 1em;
+  }
+  @include breakpoint(small) {
+    margin: 1em 2em;
+  }
+}

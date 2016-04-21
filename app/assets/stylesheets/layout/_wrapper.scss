@@ -12,6 +12,8 @@
 		@include vendor('transition', 'opacity #{_duration(menu)} ease');
 		margin: 0 auto;
 		max-width: 100%;
+        min-height: 100%;
+        height: auto !important;
 	  	position: relative;
 		opacity: 1;
 		padding: (_size(section-spacing) * 1.5);
