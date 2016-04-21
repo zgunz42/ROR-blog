@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   before_action :pages
 
   def pages
-    @pages = {:home => root_path, :articles => posts_path}
+    @pages = {:home => root_path, :articles => posts_path, :contacts => contact_forms_path}
   end
 end
