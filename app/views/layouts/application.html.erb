@@ -17,8 +17,8 @@
     <h1><a href="<%= root_path %>">ZGUNZ<span>DEV</span></a></h1>
     <nav class="links">
       <ul>
-        <% @pages.each do |page| %>
-        <li><a href="#"><%=page%></a></li>
+        <% @pages.each do |page, url| %>
+        <li><a href="<%= url %>"><%= page %></a></li>
         <% end %>
       </ul>
     </nav>

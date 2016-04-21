@@ -99,13 +99,17 @@ module ApplicationHelper
     if collection_or_options.is_a? Hash
       options, collection_or_options = collection_or_options, nil
       end
-    options = options.merge :next_label => "Next Page"
-    options = options.merge :previous_label => "Previous Page"
     unless options[:renderer]
       options = options.merge :renderer => PaginationListLinkRenderer
     end
     unless options[:page_links]
       options = options.merge  :page_links => false
+    end
+    unless options[:next_label]
+      options = options.merge :next_label => "Next Page"
+    end
+    unless options[:previous_label]
+      options = options.merge :previous_label => "Previous Page"
     end
     super *[collection_or_options, options].compact
   end

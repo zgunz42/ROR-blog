@@ -18,11 +18,14 @@
       <p><%= part post.content%></p>
   <% end %>
   <footer>
-    <% unless show %>
     <ul class="actions">
+    <% if !show %>
       <li><a href="<%= post_path post %>" class="button big">Continue Reading</a></li>
-    </ul>
+    <%else%>
+      <li><a href="<%= post_path post %>" class="button big">Downloads</a></li>
+      <li><a href="<%= post_path post %>" class="button big">Source Code</a></li>
     <% end %>
+    </ul>
     <ul class="stats">
       <li><a href="#" class="tag">General</a></li>
       <li><a href="#" class="icon fa-heart">28</a></li>

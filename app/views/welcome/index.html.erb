@@ -2,6 +2,8 @@
     ZgunzDEV | Home
 <% end %>
 <%= render @posts %>
+<!-- Pagination -->
+<%= will_paginate @posts %>
 <% content_for :sidebar_left do %>
   <%=render 'layouts/sidebar', locals: {direction: :left} %>
 <%end%>
