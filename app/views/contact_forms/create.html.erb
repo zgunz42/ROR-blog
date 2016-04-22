@@ -1,8 +1,17 @@
 <% content_for :title do %>
     Contact | Sent
 <% end %>
-<div class="short_content email_sent" id="completed">
-<h1>Thank For your</h1>
-<p>we well get in touch shortly</p>
-<h3><%= @user %></h3>
+<div class="contact_form">
+<ul id="completed">
+  <li>
+    <!-- this just line green -->
+  </li>
+  <li>
+    <h4>Thank you adi_gunawan@live.com</h4>
+    <p>when you can't see our email please check spam folder
+      <br/>if nothing happen click this <%= link_to 'link', root_path %>
+      <br/>redirect you in 5 second...
+    </p>
+  </li>
+</ul>
 </div>

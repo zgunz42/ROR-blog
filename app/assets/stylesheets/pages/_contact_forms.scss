@@ -33,10 +33,24 @@
       min-width: 100%;
     }
   }
-  @include breakpoint(xsmall) {
-    margin: 1em;
+  > #completed{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    > *{
+      margin-top: 1em;
+    }
+    > :first-child{
+      background-color: rgba(0, 128, 0, 0.33);
+      margin-right: 1em;
+      margin-top: 0;
+      padding: 2em;
+    }
   }
   @include breakpoint(small) {
     margin: 1em 2em;
+  }
+  @include breakpoint(xsmall) {
+    margin: 0;
   }
 }
