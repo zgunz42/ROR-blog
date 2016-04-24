@@ -1,0 +1,39 @@
+<!-- item_large -->
+<% show = false if :show.nil? %>
+<article class="post">
+  <header>
+    <div class="title">
+      <h2><%= link_to item_large.title, item_large %></h2>
+      <!--<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>-->
+    </div>
+    <div class="meta">
+      <time class="published" datetime="2015-10-25"><%= item_large.created_at.strftime("%B %d, %Y") %></time>
+      <a href="#" class="author"><span class="name">Adi Gunawan</span><%= image_tag 'avatar.jpg'%></a>
+    </div>
+  </header>
+  <a href="#" class="image featured"><%= image_tag '5.png' %></a>
+  <% if show %>
+      <p><%= markdown item_large.content %></p>
+  <%else%>
+      <p><%= part item_large.content %></p>
+  <% end %>
+  <footer>
+    <ul class="actions">
+      <% if !show %>
+          <li><a href="<%= url_for item_large %>" class="button big">Continue Reading</a></li>
+      <%else%>
+          <li><a href="<%= url_for item_large %>" class="button big">Downloads</a></li>
+          <li><a href="<%= url_for item_large %>" class="button big">Source Code</a></li>
+      <% end %>
+    </ul>
+    <ul class="stats">
+      <li><a href="#" class="tag">General</a></li>
+      <li><a href="#" class="icon fa-heart">28</a></li>
+      <li><a href="#" class="icon fa-comment">128</a></li>
+      <li><a href="#" class="icon fa-share">128K</a></li>
+    </ul>
+  </footer>
+  <% if show %>
+      <%=render :partial => 'layouts/disqus', object: item_large %>
+  <%end%>
+</article>

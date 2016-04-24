@@ -46,6 +46,7 @@
 	@import 'components/section';
 	@import 'components/table';
 	@import "components/tab";
+    @import "components/spinner";
 
 // Layout.
 
@@ -60,3 +61,4 @@
 
 // Pages
     @import 'pages/contact_forms';
+    @import "pages/projects";

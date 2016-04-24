@@ -9,7 +9,7 @@
 	.post {
 		@include padding(_size(section-spacing), _size(section-spacing));
 		background: _palette(bg);
-		border: solid 1px _palette(border);
+        box-shadow: 1px 1px 2px 0 _palette(shadow);
 		margin: 0 0 _size(section-spacing) 0;
 		position: relative;
 

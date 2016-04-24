@@ -16,6 +16,7 @@
         content-to-footer:          120px,
 		section-spacing:			2em,
 		section-spacing-small:		1.5em,
+        footer-height:              70px,
 		menu:						25em
 	);
 
@@ -40,6 +41,8 @@
 		fg-bold:					#3c3b3b,
 		fg-light:					#aaaaaa,
 		border:						rgba(160,160,160,0.3),
+        shadow:                     rgba(0,0,0,0.2),
+        shadow-tint:                     rgba(0,0,0,0.1),
 		border-bg:					rgba(160,160,160,0.075),
 		border-alt:					rgba(160,160,160,0.65),
 		accent:						#2ebaae

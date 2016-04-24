@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :posts
+  resources :projects
   resources :contact_forms, only: [:index, :new, :create], path: 'contacts'
 
   # The priority is based upon order of creation: first created -> highest priority.

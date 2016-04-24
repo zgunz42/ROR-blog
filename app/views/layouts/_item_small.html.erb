@@ -1,0 +1,13 @@
+<figure class="card-post">
+  <a href="<%= url_for item_small %>">
+    <%= image_tag 'ai-1.jpg' %>
+    <dl>
+      <dt><%= item_small.title %></dt>
+      <dd><%= item_small.description %></dd>
+    </dl>
+  </a>
+  <div id="wrapper-part-info">
+    <div class="part-info-image"><%= image_tag 'icon-ai.svg', size: '28x28' %></div>
+    <div id="part-info"><%= item_small.title %></div>
+  </div>
+</figure>

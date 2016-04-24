@@ -1,7 +1,7 @@
 <% content_for :title do %>
   ZgunzDEV | <%= @post.title %>
 <% end %>
-<%= render @post, show: true %>
+<%= render partial: 'layouts/item_large', locals:{ show: true }, object: @post %>
 <% content_for :sidebar_right do %>
     <%=render 'layouts/sidebar', locals: {direction: :right} %>
 <%end%>

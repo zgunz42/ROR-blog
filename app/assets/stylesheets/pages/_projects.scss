@@ -1,0 +1,67 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#wrapper-container {
+  float: left;
+  width: 100%;
+  height: auto;
+  .container{
+    position: relative;
+    width: 1200px;
+    margin-left: -600px;
+    left: 50%;
+
+    @include breakpoint('max-width: 1200px'){
+      width:940px;
+      margin-left:-465px;
+    }
+    @include breakpoint('(max-width: 965px)'){
+      width:835px;
+      margin-left:-417.5px;
+    }
+    @include breakpoint('(max-width: 860px)'){
+      width:715px;
+      margin-left:-357.5px;
+    }
+    @include breakpoint('(max-width: 740px)'){
+      width:585px;
+      margin-left:-292.5px;
+    }
+    @include breakpoint('(max-width: 610px)'){
+      width:455px;
+      margin-left:-227.5px;
+    }
+    @include breakpoint(xsmall){
+      width:295px;
+      margin-left:-147.5px;
+    }
+  }
+}
+#main-container-image {
+  float: left;
+  width: 100%;
+  height: auto;
+  background-color: #F4F4F4;
+  .work{
+    padding: 1em;
+    > *{
+      float: left;
+      width: calc(100% / 4 - 30px);
+      height: auto;
+      position: relative;
+      padding: 0 !important;
+      margin: 15px;
+      transition: all 0.3s ease-in-out 0s;
+      background-color: #FFF;
+      @include breakpoint(medium){
+        width: calc(100% / 3 - 30px);
+      }
+      @include breakpoint(small){
+        width: calc(100% / 2 - 30px);
+      }
+      @include breakpoint(xsmall){
+        width: calc(100% / 1 - 30px);
+      }
+    }
+  }
+}

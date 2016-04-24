@@ -1,6 +1,9 @@
-<%= render @posts%>
+<% content_for :title do %>
+    ZgunzDEV | Articles
+<% end %>
+<%= render :partial => 'layouts/item_large', collection: @posts %>
 <!-- Pagination -->
 <%= will_paginate @posts %>
 <% content_for :sidebar_right do %>
-    <%=render 'layouts/sidebar', locals: {direction: :right} %>
+    <%=render 'layouts/sidebar', locals: {direction: :right, content: @posts} %>
 <%end%>
