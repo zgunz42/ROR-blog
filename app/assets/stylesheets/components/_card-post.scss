@@ -1,83 +1,88 @@
 .card-post{
-  #wrapper-part-info {
-    position: relative;
-    width: 100%;
-    height: 44px;
-    background-color: #FFF;
-  }
-  a img {
-    height: 90%;
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 5%;
-  }
-  img {
+  float: left;
+  height: auto;
+  position: relative;
+  padding: 0 !important;
+  margin: 0 15px 30px 15px;
+  transition: all 0.3s ease-in-out 0s;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+  background-color: #FFF;
+  width: 22%;
+  > img {
     vertical-align: bottom;
   }
-  .work figure.white dl {
-    background: #FFF none repeat scroll 0 0;
-  }
-  .work figure dl {
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    padding: 10px;
-    margin: 0;
-    line-height: 2.5;
-    color: #FFF;
-    transition: all 0.3s ease-in-out 0s;
-  }
-  .work figure dl dt {
-    font-family: Helvetica,sans-serif;
-    font-size: 13px;
-    margin-bottom: 0;
-    font-weight: 600;
-    width: 80%;
-    margin-left: 10%;
-    color: #666;
-    text-align: left;
-    height: 20px;
-    line-height: 100%;
-    margin-top: 40px;
-  }
-  .work figure dl dd {
-    font-family: Helvetica,sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 150%;
-    color: #999;
-    width: 80%;
-    margin-left: 10%;
-    text-align: left;
+  a{
+    img {
+      height: 90%;
+      width: 90%;
+      margin-left: 5%;
+      margin-top: 5%;
+    }
+    dl{
+      background: #FFF none repeat scroll 0 0;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      padding: 10px;
+      margin: 0;
+      line-height: 2.5;
+      color: #FFF;
+      transition: all 0.3s ease-in-out 0s;
+      dt{
+        font-family: Helvetica,sans-serif;
+        font-size: 13px;
+        margin-bottom: 0;
+        font-weight: 600;
+        width: 80%;
+        margin-left: 10%;
+        color: #666;
+        text-align: left;
+        height: 20px;
+        line-height: 100%;
+        margin-top: 40px;
+      }
+      dd{
+        font-family: Helvetica,sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 150%;
+        color: #999;
+        width: 80%;
+        margin-left: 10%;
+        text-align: left;
+      }
+    }
   }
   #wrapper-part-info {
     position: relative;
     width: 100%;
     height: 44px;
     background-color: #FFF;
-  }
-  .part-info-image {
-    float: left;
-    margin-left: 15px;
-    margin-top: 8px;
-  }
-  #part-info {
-    float: left;
-    width: calc(100% - 53px);
-    text-align: left;
-    line-height: 44px;
-    font-family: Helvetica,sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: #666;
-    margin-left: 10px;
-    height: 44px;
-  }
-  .part-info-image img {
-    width: 100%;
-    height: 100%;
+    > .part-info-image {
+      float: left;
+      margin-left: 5%;
+      margin-top: 8px;
+
+    }
+    > #part-info {
+      float: left;
+      width: 70% !important;
+      text-align: left;
+      line-height: 44px;
+      font-family: Helvetica,sans-serif;
+      font-size: 0.9em;
+      font-weight: 400;
+      color: #666;
+      margin-left: 10px;
+      height: 44px;
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
