@@ -9,6 +9,7 @@
 	#sidebar {
 		min-width: 22em;
 		width: 22em;
+        clear: both;
 
 		> * {
 			border-top: solid 1px _palette(border);
@@ -28,7 +29,7 @@
 		}
 
 		@include breakpoint(large) {
-			border-top: solid 1px _palette(border);
+			//border-top: solid 1px _palette(border);  // make ugly!
 			margin: _size(section-spacing) 0 0 0;
 			min-width: 0;
 			padding: _size(section-spacing) 0 0 0;

@@ -1,7 +1,9 @@
 <% content_for :title do %>
     ZgunzDEV | MyProjects
 <% end %>
+<div id="wrapper-container">
 <%=render :partial => 'layouts/item_small', :collection => @projects %>
+</div>
 <% content_for :sidebar_left do %>
     <%=render 'layouts/sidebar', locals: {direction: :left, content: @projects} %>
 <%end%>
