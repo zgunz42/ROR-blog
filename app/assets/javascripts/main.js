@@ -21,7 +21,13 @@
 			$menu = $('#menu'),
 			$sidebar = $('#sidebar'),
 			$main = $('#main'),
+            $wrapper = $('#wrapper'),
+            $footer = $('#footer'),
+            $fotter_content = $('#main-container-footer'),
 			$tab = $(".tab .tabs-nav li");
+
+        // Prevent footer hide main content!
+        $wrapper.css('padding-bottom', $footer.height() + $fotter_content.height());
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
@@ -37,7 +43,8 @@
 
 		// Prioritize "important" elements on medium.
 			skel.on('+medium -medium', function() {
-				$.prioritize(
+                $wrapper.css('padding-bottom', $footer.height() + $fotter_content.height());
+                $.prioritize(
 					'.important\\28 medium\\29',
 					skel.breakpoint('medium').active
 				);
