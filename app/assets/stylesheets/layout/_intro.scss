@@ -8,7 +8,10 @@
 
 #intro {
   padding: 5px;
+  padding-top: 2em;
+  text-align: center;
   background: _palette(bg);
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
   > *{
     padding: 8px;
   }
@@ -18,26 +21,12 @@
     margin: 0 0 (_size(element-margin) * 0.5) 0;
     overflow: hidden;
     position: relative;
-    width: 4em;
-
-    &:before {
-      background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none" zoomAndPan="disable"><polygon points="0,0 100,0 100,25 50,0 0,25" style="fill:#{_palette(bg)}" /><polygon points="0,100 100,100 100,75 50,100 0,75"  style="fill:#{_palette(bg)}" /></svg>');
-      background-position: top left;
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      content: '';
-      display: block;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-
+    width: 6em;
     img {
       display: block;
       margin-left: -0.25em;
       width: 4.5em;
+      border-radius: 100%;
     }
   }
 
@@ -66,10 +55,20 @@
       }
     }
   }
+  @include breakpoint(large){
+    background: none;
+    box-shadow: none;
+    margin: 0 30% _size(section-spacing) 30%;
+  }
+  @include breakpoint(medium){
+    background: none;
+    box-shadow: none;
+    margin: 0 20% _size(section-spacing) 20%;
+  }
 
   @include breakpoint(small) {
-    margin: 0 0 _size(section-spacing-small) 0;
     padding: 1.25em 0;
+    margin: 0 5% _size(section-spacing) 5%;
     //background: _palette(bg-alt);
 
     > :last-child {
