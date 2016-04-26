@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title><%= yield :title  %></title>
   <%= yield :meta_tag %>
+  <% if browser.ie?(8)%>
+      <%= javascript_include_tag 'ie/html5shiv' %>
+      <%= stylesheet_link_tag 'ie8' %>
+  <% end %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+  <% if browser.ie?(9)%>
+      <%= stylesheet_link_tag 'ie9' %>
+  <% end %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -25,5 +32,8 @@
 </div>
 <!-- Scripts -->
 <%= javascript_include_tag 'application' %>
+<% if browser.ie?(8)%>
+    <%= javascript_include_tag 'ie/respond.min' %>
+<% end %>
 </body>
 </html>
