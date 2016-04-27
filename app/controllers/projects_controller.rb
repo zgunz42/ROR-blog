@@ -36,6 +36,6 @@ class ProjectsController < ApplicationController
     @project = Project.friendly.find(params[:id])
   end
   def project_params
-    params.require(:project).permit(:title, :description, :link, :slug)
+    params.require(:project).permit(:title, :description, :slug, :link, missions_attributes: [:id, :title, :content])
   end
 end
