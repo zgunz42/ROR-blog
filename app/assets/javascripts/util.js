@@ -148,10 +148,12 @@
 
 					$this
 						.on('click', 'a', function(event) {
+                            // fixme: when click on sign_out rails route detect :get instead of :delete
 
 							var $a = $(this),
 								href = $a.attr('href'),
-								target = $a.attr('target');
+								target = $a.attr('target'),
+                                method = $a.attr('data-method');
 
 							if (!href || href == '#' || href == '' || href == '#' + id)
 								return;
@@ -166,10 +168,10 @@
 							// Redirect to href.
 								window.setTimeout(function() {
 
-									if (target == '_blank')
-										window.open(href);
+                                    if (target == '_blank')
+                                        window.open(href);
 									else
-										window.location.href = href;
+                                        $.rails.handleMethod($a);
 
 								}, config.delay + 10);
 
@@ -183,7 +185,7 @@
 					$this.touchPosX = event.originalEvent.touches[0].pageX;
 					$this.touchPosY = event.originalEvent.touches[0].pageY;
 
-				})
+				});
 
 				$this.on('touchmove', function(event) {
 

@@ -24,6 +24,11 @@
   <%= yield :sidebar_right %>
   <!-- Main -->
   <div id="main">
+    <% if notice %>
+    <p class="notice"><%= notice %></p>
+        <% elsif alert %>
+    <p class="alert"><%= alert %></p>
+        <% end %>
     <%= yield %>
   </div>
   <%= yield :sidebar_left %>

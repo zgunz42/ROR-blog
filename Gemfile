@@ -36,8 +36,14 @@ gem 'will_paginate', '~> 3.1'
 
 gem 'browser'
 
+gem 'devise'
+
+gem 'cancancan'
+
+gem 'rolify'
+
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
