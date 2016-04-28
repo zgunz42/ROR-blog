@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  resourcify
   extend FriendlyId
   friendly_id :title, use: :slugged
   def image

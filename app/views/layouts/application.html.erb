@@ -32,7 +32,9 @@
     <%= yield %>
   </div>
   <%= yield :sidebar_left %>
+  <% unless user_signed_in? %>
   <%= render 'layouts/container_footer'%>
+      <%end%>
   <%= render 'layouts/footer' %>
 </div>
 <!-- Scripts -->
