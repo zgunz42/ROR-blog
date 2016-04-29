@@ -8,7 +8,7 @@
     </div>
     <div class="meta">
       <time class="published" datetime="2015-10-25"><%= item_large.created_at.strftime("%B %d, %Y") %></time>
-      <a href="#" class="author"><span class="name">Adi Gunawan</span><%= image_tag 'avatar.jpg'%></a>
+      <a href="#" class="author"><span class="name"><%= item_large.author.email %></span><%= image_tag 'avatar.jpg'%></a>
     </div>
   </header>
   <a href="#" class="image featured"><%= image_tag '5.png' %></a>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427005249) do
+ActiveRecord::Schema.define(version: 20160428114808) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -43,9 +43,23 @@ ActiveRecord::Schema.define(version: 20160427005249) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "slug"
+    t.integer  "author_id"
   end
 
+  add_index "posts", ["author_id"], name: "index_posts_on_author_id"
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "gender",       default: 1, null: false
+    t.integer  "user_id"
+    t.string   "fb_link"
+    t.string   "twitter_link"
+    t.string   "github_link"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -54,7 +68,10 @@ ActiveRecord::Schema.define(version: 20160427005249) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "slug"
+    t.integer  "author_id"
   end
+
+  add_index "projects", ["author_id"], name: "index_projects_on_author_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -80,6 +97,7 @@ ActiveRecord::Schema.define(version: 20160427005249) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

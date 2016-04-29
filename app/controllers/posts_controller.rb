@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource find_by: :slug
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.paginate(:page => params[:page], :per_page => 5)
@@ -14,7 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new post_params
-
+    @post.author_id = current_user.id
     if @post.save
       current_user.add_role :author, @post
       redirect_to @post, :notice => 'zgunz your post ' << @post.title << ' created !'

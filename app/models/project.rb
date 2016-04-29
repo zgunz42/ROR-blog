@@ -2,6 +2,7 @@ class Project < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
   has_many :missions
+  belongs_to :admin, class_name: "User", foreign_key: :admin_id
   accepts_nested_attributes_for :missions,
                                 allow_destroy: true,
                                 reject_if: lambda{|attributes|attributes['title'].blank?}

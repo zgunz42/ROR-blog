@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-  load_and_authorize_resource find_by: :slug
   before_action :find_project, only: [:show, :edit, :update, :destroy]
 
   def index
