@@ -1,0 +1,32 @@
+#notifications{
+  position: fixed;
+  right: 0;
+  top: 3.5em;
+  z-index: 100;
+  > .content{
+    margin: 1em;
+    padding: 4px;
+    border-radius: 15pc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    background: _palette(bg);
+    .message{
+      margin: 0;
+      padding: 4px;
+      margin-left: 1em;
+    }
+    .status{
+      margin: 8px 8px 0 2em;
+      height: 0;
+      padding: 10px;
+      border-radius: 100%;
+
+      &.success{
+        background-color: #0c712c;
+      }
+      &.error{
+        background-color: #aa0000;
+      }
+    }
+  }
+}

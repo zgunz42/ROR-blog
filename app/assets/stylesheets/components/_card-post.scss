@@ -35,13 +35,17 @@
         font-size: 13px;
         margin-bottom: 0;
         font-weight: 600;
-        width: 80%;
+        width: 85%;
         margin-left: 10%;
         color: #666;
         text-align: left;
         height: 20px;
         line-height: 100%;
         margin-top: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
       }
       dd{
         font-family: Helvetica,sans-serif;
@@ -77,6 +81,9 @@
       color: #666;
       margin-left: 10px;
       height: 44px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       img{
         width: 100%;

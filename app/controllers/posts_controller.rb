@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource find_by: :slug
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.paginate(:page => params[:page], :per_page => 5)

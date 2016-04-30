@@ -1,8 +1,8 @@
     <!-- Mini Post -->
     <article class="mini-post">
       <header>
-        <h3><%= link_to item_mini.title, item_mini %></h3>
-        <time class="published" datetime="<%= item_mini.created_at%>"><%= item_mini.created_at.strftime("%B %d, %Y") %></time>
+        <%= content_tag :h3, link_to(item_mini.title, item_mini)%>
+        <%= time_tag item_mini.created_at, pubdate: true, class: 'published' %>
         <a href="#" class="author"><%= image_tag  item_mini.avatar %></a>
       </header>
       <a href="#" class="image"><%= image_tag item_mini.image %></a>

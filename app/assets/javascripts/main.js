@@ -24,6 +24,7 @@
             $wrapper = $('#wrapper'),
             $footer = $('#footer'),
             $fotter_content = $('#main-container-footer'),
+            $notification = $('#notifications'),
 			$tab = $(".tab .tabs-nav li");
 
         // Prevent footer hide main content!
@@ -35,6 +36,9 @@
 			$window.on('load', function() {
 				window.setTimeout(function() {
 					$body.removeClass('is-loading');
+                    if ($notification.length != 0){
+                        $notification.fadeToggle("slow", "linear");
+                    }
 				}, 100);
 			});
 

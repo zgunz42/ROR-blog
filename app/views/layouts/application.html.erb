@@ -21,14 +21,21 @@
 <div id="wrapper">
   <%= render 'layouts/header' %>
   <%= render 'layouts/menu' %>
+  <% if !flash.empty? %>
+  <section id="notifications">
+    <div id="notif-1" class="content">
+  <% if notice %>
+      <p class="message"><%= notice %></p>
+  <% elsif alert %>
+      <p class="message"><%= alert %></p>
+  <% end %>
+    <span class="status <%= flash[:status] %>"></span>
+    </div>
+  <%end%>
+  </section>
   <%= yield :sidebar_right %>
   <!-- Main -->
   <div id="main">
-    <% if notice %>
-    <p class="notice"><%= notice %></p>
-        <% elsif alert %>
-    <p class="alert"><%= alert %></p>
-        <% end %>
     <%= yield %>
   </div>
   <%= yield :sidebar_left %>

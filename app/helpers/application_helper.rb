@@ -65,21 +65,6 @@ module ApplicationHelper
       ["actions", @options[:class]].compact.join(" ")
     end
   end
-  def part(content)
-    max_char = 114
-    pattern = /\b([A-Za-z-_,. ]+)\b/
-    data = ''
-    content.scan(pattern).each do |m|
-      if max_char <= 0
-        break
-      end
-      max_char -= m[0].length
-      data += m[0]
-    end
-
-    data << "..."
-  end
-
   def markdown(content)
     render = HTMLwithPygments.new(no_links: true, hard_wrap: true)
     options = {
@@ -112,5 +97,17 @@ module ApplicationHelper
       options = options.merge :previous_label => "Previous Page"
     end
     super *[collection_or_options, options].compact
+  end
+
+  # this add \n for each item and convert it into <br/>
+  def wrap_br(text, options = {})
+    # this is very long text with cool item on it
+    line_width = options.fetch(:line_width, 24)
+    line_height = options.fetch(:line_height, 4)
+
+    text.split(/(.{#{line_width}})/).collect! do |line|
+      line_height -=1
+      line_height > 0 ? line.gsub(/(.{1,#{line_width}})(\s+|$)/, "\\1\n").strip : line
+    end * "\n"
   end
 end
