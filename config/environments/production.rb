@@ -77,7 +77,11 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+<<<<<<< HEAD
   config.action_mailer.default_url_options ={host: 'https://hidden-reaches-76010.herokuapp.com'}
+=======
+  config.action_mailer.default_url_options ={host: 'hidden-reaches-76010.heroku.com'}
+>>>>>>> d1ed053334c87b168702dcab6c0515748d620b40
 
   config.action_mailer.delivery_method = :smtp
 
