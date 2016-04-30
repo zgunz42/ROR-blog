@@ -35,8 +35,6 @@
                           method: :delete,
                           class: 'icon fa-heart' %></li>
           <%else%>
-          <% logger.info "status is #{current_or_guest_user.heart?(item_large)}" %>
-          <% logger.info "user is #{current_or_guest_user.email}" %>
           <li><%= link_to item_large.hearts.length,
                           heart_path(post_id: item_large.id),
                           remote: true,

@@ -174,7 +174,7 @@
                                         if(method == "delete")
                                             $.rails.handleMethod($a);
                                         else
-                                            window.location = a;
+                                            window.location = href;
 
 								}, config.delay + 10);
 

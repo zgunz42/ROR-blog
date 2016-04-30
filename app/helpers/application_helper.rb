@@ -103,11 +103,11 @@ module ApplicationHelper
   def wrap_br(text, options = {})
     # this is very long text with cool item on it
     line_width = options.fetch(:line_width, 24)
-    line_height = options.fetch(:line_height, 4)
+    line_height = options.fetch(:line_height, 7)
 
     text.split(/(.{#{line_width}})/).collect! do |line|
       line_height -=1
-      line_height > 0 ? line.gsub(/(.{1,#{line_width}})(\s+|$)/, "\\1\n").strip : line
-    end * "\n"
+      line_height >= 0 ? line.gsub(/(.{1,#{line_width}})(\s+|$)/, "\\1\n") : next
+    end * ' '
   end
 end
