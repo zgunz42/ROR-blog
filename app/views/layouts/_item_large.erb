@@ -1,6 +1,6 @@
 <!-- item_large -->
 <% show = false if :show.nil? %>
-<article class="post">
+<article id="<%= dom_id(item_large) %>" class="post">
   <header>
     <div class="title">
       <h2><%= link_to item_large.title, item_large %></h2>
@@ -28,7 +28,21 @@
     </ul>
     <ul class="stats">
       <li><a href="#" class="tag">General</a></li>
-      <li><a href="#" class="icon fa-heart">28</a></li>
+      <% if current_or_guest_user.heart?(item_large)%>
+          <li><%= link_to item_large.hearts.length,
+                          unheart_path(post_id: item_large.id),
+                          remote: true,
+                          method: :delete,
+                          class: 'icon fa-heart' %></li>
+          <%else%>
+          <% logger.info "status is #{current_or_guest_user.heart?(item_large)}" %>
+          <% logger.info "user is #{current_or_guest_user.email}" %>
+          <li><%= link_to item_large.hearts.length,
+                          heart_path(post_id: item_large.id),
+                          remote: true,
+                          method: :post,
+                          class: 'icon fa-heart' %></li>
+      <%end%>
       <li><a href="#" class="icon fa-comment">128</a></li>
       <li><a href="#" class="icon fa-share">128K</a></li>
     </ul>

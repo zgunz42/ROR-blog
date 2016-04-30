@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   get 'contact_forms/new'
 
+  match 'heart', to: 'hearts#heart', via: :post
+  match 'unheart', to: 'hearts#unheart', via: :delete
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

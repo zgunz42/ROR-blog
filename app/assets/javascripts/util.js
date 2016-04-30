@@ -171,7 +171,10 @@
                                     if (target == '_blank')
                                         window.open(href);
 									else
-                                        $.rails.handleMethod($a);
+                                        if(method == "delete")
+                                            $.rails.handleMethod($a);
+                                        else
+                                            window.location = a;
 
 								}, config.delay + 10);
 

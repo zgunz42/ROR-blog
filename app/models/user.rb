@@ -6,5 +6,17 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, :foreign_key => :author_id
   has_many :projects, :foreign_key => :author_id
+  has_many :hearts, dependent: :destroy
   has_one :profile, :foreign_key => :user_id
+
+  def heart!(post)
+    self.hearts.create!(post_id: post.id)
+  end
+  def unheart!(post)
+    heart = self.hearts.find_by_post_id(post.id)
+    heart.destroy
+  end
+  def heart?(post)
+    self.hearts.find_by_post_id(post.id)
+  end
 end

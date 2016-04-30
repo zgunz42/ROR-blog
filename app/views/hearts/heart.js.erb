@@ -1,0 +1,6 @@
+$('#<%= dom_id(@post) %>').find('a.icon.fa-heart')
+    .replaceWith("<%= j link_to @post.hearts.length,
+                          unheart_path(post_id: @post.id),
+                          remote: true,
+                          method: :delete,
+                          class: 'icon fa-heart' %>");
