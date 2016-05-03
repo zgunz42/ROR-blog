@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animated login form</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'devise', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="wrapper">
+  <%= yield %>
+</div>
+<!-- Scripts -->
+<%= javascript_include_tag 'devise' %>
+</body>
+</html>

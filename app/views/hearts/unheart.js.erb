@@ -1,6 +1,6 @@
 $('#<%= dom_id(@post) %>').find('a.icon.fa-heart')
     .replaceWith("<%= j link_to @post.hearts.length,
-                          heart_path(post_id: @post.id),
+                          post_heart_path(post_id: @post.id),
                           remote: true,
                           method: :post,
                           class: 'icon fa-heart' %>");

@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   rolify
+  validates :username, uniqueness: true  # everysingle user has deferent email
+  # Only allow letter, number, underscore and punctuation.
+  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

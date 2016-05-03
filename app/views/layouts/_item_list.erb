@@ -2,7 +2,8 @@
   <article>
     <header>
       <h3><%= link_to item_list.title, item_list %></h3>
-      <time class="published" datetime="2015-10-10">October 10, 2015</time>
+      <%= time_tag item_list.created_at.to_date,
+                   pubdate: true, class: 'published'%>
     </header>
     <a href="#" class="image"><%= image_tag '2.png'%></a>
   </article>

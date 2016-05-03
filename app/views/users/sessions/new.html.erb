@@ -1,26 +1,13 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), remote:true, html: {class: 'login'}) do |f| %>
+    <p class="title">Log in</p>
     <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
+    <i class="fa fa-user"></i>
     <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+    <i class="fa fa-key"></i>
+    <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+    <button>
+      <i class="spinner"></i>
+      <span class="state">Log in</span>
+    </button>
+      <footer><a target="blank" href="http://boudra.me/">boudra.me</a></footer>
 <% end %>
-
-<%= render "users/shared/links" %>

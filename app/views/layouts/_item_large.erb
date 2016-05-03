@@ -7,7 +7,8 @@
       <!--<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>-->
     </div>
     <div class="meta">
-      <time class="published" datetime="2015-10-25"><%= item_large.created_at.strftime("%B %d, %Y") %></time>
+      <%= time_tag item_large.created_at.to_date,
+                   pubdate: true, class: 'published' %>
       <a href="#" class="author"><span class="name"><%= item_large.author.profile.full_name %></span><%= image_tag 'avatar.jpg'%></a>
     </div>
   </header>
@@ -30,13 +31,13 @@
       <li><a href="#" class="tag">General</a></li>
       <% if current_or_guest_user.heart?(item_large)%>
           <li><%= link_to item_large.hearts.length,
-                          unheart_path(post_id: item_large.id),
+                          post_unheart_path(post_id: item_large.id),
                           remote: true,
                           method: :delete,
                           class: 'icon fa-heart' %></li>
           <%else%>
           <li><%= link_to item_large.hearts.length,
-                          heart_path(post_id: item_large.id),
+                          post_heart_path(post_id: item_large.id),
                           remote: true,
                           method: :post,
                           class: 'icon fa-heart' %></li>

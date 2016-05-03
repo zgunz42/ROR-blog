@@ -1,0 +1,12 @@
+<!-- Notification -->
+<% unless flash.empty? %>
+    <section id="notifications">
+      <%i = 0%>
+    <%flash.each do |key, value| %>
+          <div id="notif-<%= i += 1 %>" class="content">
+            <p class="message"><%= value %></p>
+            <span class="status <%= key %>"></span>
+          </div>
+    <%end%>
+    </section>
+<%end%>

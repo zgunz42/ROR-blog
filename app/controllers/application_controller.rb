@@ -4,11 +4,12 @@ class ApplicationController < ActionController::Base
   # never put load_and_authorize_resource this make crazy !
   protect_from_forgery with: :exception
   helper_method :current_or_guest_user
+  add_flash_types :notice, :warning, :danger, :errors, :success
   before_action :pages
+  layout :layout_by_resource
 
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:status] = 'error'
-    redirect_to root_url, :alert => exception.message
+    redirect_to root_url, :errors => exception.message
   end
 
   def pages
@@ -50,5 +51,14 @@ class ApplicationController < ActionController::Base
     u.save(:validate => false)
     session[:guest_user_id] = u.id
     u
+  end
+
+  protected
+  def layout_by_resource
+    if devise_controller?
+      'devise'
+    else
+      'application'
+    end
   end
 end

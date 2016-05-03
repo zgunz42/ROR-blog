@@ -12,10 +12,10 @@ class ContactFormsController < ApplicationController
     @contact.request = request
 
     if @contact.deliver
-      flash.now[:error] = nil
+      flash.now[:errors] = nil
       @user = params[:contact_form][:email]
     else
-      flash.now[:error] = "cannot render message"
+      flash.now[:errors] = "cannot render message"
       render :new
     end
   end

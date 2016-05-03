@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
 
+  get 'admin', to: 'users/admin#index'
+
   devise_for :users, controllers:{
-      sessions: 'users/sessions'
-  }
-  get 'contact_forms/new'
+      sessions: 'users/sessions',
+      registrations: 'users/registrations'
+  }, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   get 'welcome/index'
 
-  resources :posts
+  resources :posts do
+    match 'heart', to: 'hearts#heart', via: :post
+    match 'unheart', to: 'hearts#unheart', via: :delete
+  end
   resources :projects
   resources :contact_forms, only: [:index, :new, :create], path: 'contacts'
 
@@ -16,11 +21,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-
-  get 'contact_forms/new'
-
-  match 'heart', to: 'hearts#heart', via: :post
-  match 'unheart', to: 'hearts#unheart', via: :delete
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

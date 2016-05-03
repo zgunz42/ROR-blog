@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def update
     # code here
     if @post.update post_params
-      redirect_to @post, notice: 'succesfully updated!'
+      redirect_to @post, :flash => { :success => "post has beem updated"}
     else
       render 'edit'
     end

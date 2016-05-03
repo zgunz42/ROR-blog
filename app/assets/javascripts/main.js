@@ -24,8 +24,10 @@
             $wrapper = $('#wrapper'),
             $footer = $('#footer'),
             $fotter_content = $('#main-container-footer'),
-            $notification = $('#notifications'),
-			$tab = $(".tab .tabs-nav li");
+            $notification = $('div[id *= notif]'),
+			$tab = $(".tab .tabs-nav li"),
+            $login = $('.login');
+        var working = false;
 
         // Prevent footer hide main content!
         $wrapper.css('padding-bottom', $footer.height() + $fotter_content.height());
@@ -36,9 +38,6 @@
 			$window.on('load', function() {
 				window.setTimeout(function() {
 					$body.removeClass('is-loading');
-                    if ($notification.length != 0){
-                        $notification.fadeToggle("slow", "linear");
-                    }
 				}, 100);
 			});
 
@@ -145,6 +144,18 @@
 							$sidebar.insertBefore($main);
 						}
 					});
+        // Notification
+            var $hidetime = 200;
+            $notification
+                .on('click', function(event){
+                    $(this).fadeOut('slow');
+                })
+                .on('ready', function(){
+                   window.setTimeout(function(){
+                       $(this).fadeOut('slow');
+                   }, $hidetime);
+                    $hidetime = $hidetime + 50;
+                });
 
 	});
 

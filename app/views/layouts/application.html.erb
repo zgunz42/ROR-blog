@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=false" />
   <title><%= yield :title  %></title>
   <%= yield :meta_tag %>
   <% if browser.ie?(8)%>
@@ -14,6 +14,7 @@
       <%= stylesheet_link_tag 'ie9' %>
   <% end %>
   <%= csrf_meta_tags %>
+  <%= yield :stylesheet %>
 </head>
 <body>
 
@@ -21,18 +22,7 @@
 <div id="wrapper">
   <%= render 'layouts/header' %>
   <%= render 'layouts/menu' %>
-  <% if !flash.empty? %>
-  <section id="notifications">
-    <div id="notif-1" class="content">
-  <% if notice %>
-      <p class="message"><%= notice %></p>
-  <% elsif alert %>
-      <p class="message"><%= alert %></p>
-  <% end %>
-    <span class="status <%= flash[:status] %>"></span>
-    </div>
-  <%end%>
-  </section>
+  <%= render 'layouts/notification' %>
   <%= yield :sidebar_right %>
   <!-- Main -->
   <div id="main">
@@ -40,8 +30,8 @@
   </div>
   <%= yield :sidebar_left %>
   <% unless user_signed_in? %>
-  <%= render 'layouts/container_footer'%>
-      <%end%>
+    <%= render 'layouts/container_footer'%>
+  <%end%>
   <%= render 'layouts/footer' %>
 </div>
 <!-- Scripts -->
