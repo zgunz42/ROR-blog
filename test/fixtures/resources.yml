@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyText
+  price: 
+  rent_price: 
+  stock: 1
+
+two:
+  location: MyText
+  price: 
+  rent_price: 
+  stock: 1

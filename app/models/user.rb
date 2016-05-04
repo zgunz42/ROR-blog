@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :projects, :foreign_key => :author_id
   has_many :hearts, dependent: :destroy
   has_one :profile, :foreign_key => :user_id
+  serialize :preferences
 
   def heart!(post)
     self.hearts.create!(post_id: post.id)
